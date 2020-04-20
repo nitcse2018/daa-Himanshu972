@@ -3,6 +3,8 @@ package lab;
 import java.awt.*;
 import java.applet.*;
 import java.awt.event.*;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class login2 extends Frame implements ActionListener
 {
@@ -95,7 +97,207 @@ public class login2 extends Frame implements ActionListener
 		  
 		  add(b1);      //  SUBMIT
 		  add(b2);      //  CANCEL
-		  b1.addActionListener(this);
+//		  b1.addActionListener(this);
+		  b1.addActionListener(new ActionListener() 
+		  {  
+		          public void actionPerformed(ActionEvent e) {       
+		              String name1=name.getText();
+		              String dob1 = date.getSelectedItem() + "-" + month.getSelectedItem() + "-" + year.getSelectedItem();
+		              String gender1 = ck1.getLabel();
+		              String qual1 = qualif.getSelectedItem();
+		              String strm1 = stream.getSelectedItem();
+		              String pass = p_year.getSelectedItem();
+		              String instut1 = instut.getText();
+		              String grad1 = grad.getSelectedItem();
+		              String mob1 = mob.getText();
+		              String eml1 = eml.getText();
+		              String adr1 = adr.getText();
+		              
+		              String sptl1 = sp_tl.getText();
+		              String hobby1 = hobby.getText();
+		              
+//		              String email=t3.getText();
+//		              String address=t4.getText();
+//		              String dob=t5a.getText()+"/"+t5b.getText()+"/"+t5c.getText();
+//		              String qual=c1.getSelectedItem();
+//		              String year = t7.getText();
+//		              String link=t8.getText();
+//		              String skill=t9.getText();
+//		              String any_info=t10.getText();
+		              
+		      		FileWriter fw = null;
+						try {
+							fw = new FileWriter("C:/Users/Himanshu Srivastava/Desktop/Resume.txt",true);
+						} catch (IOException e27) {
+							e27.printStackTrace();
+						}
+		              try {
+							fw.write("\n\n\n Name : ");
+						} catch (IOException e26) {
+							
+							e26.printStackTrace();
+						}
+		              try {
+							fw.write(name1);
+						} catch (IOException e25) {
+							
+							e25.printStackTrace();
+						}
+		             
+		              try {
+							fw.write("\n\n DOB : ");
+						} catch (IOException e24) {
+							
+							e24.printStackTrace();
+						}
+		              try {
+							fw.write(dob1);
+						} catch (IOException e23) {
+							
+							e23.printStackTrace();
+						}
+		              try {
+							fw.write("\n\n Gender : ");
+						} catch (IOException e22) {
+							
+							e22.printStackTrace();
+						}
+		            try {
+							fw.write(gender1);
+						} catch (IOException e21) {
+							
+							e21.printStackTrace();
+						}
+		              try {
+							fw.write("\n\n Qualification : ");
+						} catch (IOException e20) {
+							
+							e20.printStackTrace();
+						}
+		              try {
+							fw.write(qual1);
+						} catch (IOException e19) {
+							
+							e19.printStackTrace();
+						}
+		              try {
+							fw.write("\n\n Stream : ");
+						} catch (IOException e18) {
+							
+							e18.printStackTrace();
+						}
+		              try {
+							fw.write(strm1);
+						} catch (IOException e17) {
+							
+							e17.printStackTrace();
+						}
+		              try {
+							fw.write("\n\n Passing year : ");
+						} catch (IOException e16) {
+							
+							e16.printStackTrace();
+						}
+		              try {
+							fw.write(pass);
+						} catch (IOException e15) {
+							
+							e15.printStackTrace();
+						}
+		              
+		              try {
+							fw.write("\n\n Institute : ");
+						} catch (IOException e14) {
+							
+							e14.printStackTrace();
+						}
+		              try {
+							fw.write(instut1);
+						} catch (IOException e13) {
+							
+							e13.printStackTrace();
+						}
+		              try {
+							fw.write("\n\n Grades  : ");
+						} catch (IOException e12) {
+							
+							e12.printStackTrace();
+						}
+		              try {
+							fw.write(grad1);
+						} catch (IOException e11) {
+							
+							e11.printStackTrace();
+						}
+		              try {
+							fw.write("\n\n Mobile : ");
+						} catch (IOException e10) {
+							
+							e10.printStackTrace();
+						}
+		              try {
+							fw.write(mob1);
+						} catch (IOException e9) {
+							
+							e9.printStackTrace();
+						}
+		              try {
+							fw.write("\n\n E-mail  : ");
+						} catch (IOException e8) {
+							
+							e8.printStackTrace();
+						}
+		            try {
+							fw.write(eml1);
+						} catch (IOException e7) {
+							
+							e7.printStackTrace();
+						}
+		              try {
+							fw.write("\n\n Address  : ");
+						} catch (IOException e6) {
+							
+							e6.printStackTrace();
+						}
+		            try {
+							fw.write(adr1);
+						} catch (IOException e5) {
+							
+							e5.printStackTrace();
+						}
+		              try {
+							fw.write("\n\n Special Talent  : ");
+						} catch (IOException e4) {
+							
+							e4.printStackTrace();
+						}
+		            try {
+							fw.write(sptl1);
+						} catch (IOException e3) {
+							
+							e3.printStackTrace();
+						}
+		              try {
+							fw.write("\n\n Hobbies  : ");
+						} catch (IOException e2) {
+							
+							e2.printStackTrace();
+						}
+		            try {
+							fw.write(hobby1);
+						} catch (IOException e1) {
+							
+							e1.printStackTrace();
+						}
+		              try {
+							fw.close();
+						} catch (IOException e0) {
+							
+							e0.printStackTrace();
+						}
+		              
+		             }  
+		             });
 		  b2.addActionListener(this);
 		  add(b1);
 		  add(b2);
@@ -211,7 +413,7 @@ public class login2 extends Frame implements ActionListener
 
 // ******************   MAIN  FUNCTION  *************************
 	
-	public static void main(String g[])
+	public static void main(String g[]) throws IOException
 	{
 		login2 stu=new login2();
 		stu.setSize(new Dimension(800,730));
